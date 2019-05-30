@@ -5,6 +5,10 @@
 		}
 	],
 	"settings": {
-		"editor.quickSuggestionsDelay": 50
+		"editor.quickSuggestionsDelay": 1000,
+		"editor.fontFamily": "'PT mono' , 'Hermit',  'Fantasque Sans Mono'  ",
+		"markdown.preview.fontFamily": "-Anonymous Prom, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif",
+		"editor.fontWeight": "300",
+		"editor.fontSize": 16
 	}
 }

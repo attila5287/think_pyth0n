@@ -1,7 +1,7 @@
 from __future__ import print_function, division
 import random
 
-
+# -------------------CARD-----------------------
 class Card:
     """Represents a standard playing card.
     
@@ -102,7 +102,7 @@ class Deck:
         for i in range(num):
             hand.add_card(self.pop_card())
 
-
+# -------------------HAND-----------------------
 class Hand(Deck):
     """Represents a hand of playing cards."""
     
