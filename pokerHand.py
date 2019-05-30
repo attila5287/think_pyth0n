@@ -11,7 +11,7 @@ License: http://creativecommons.org/licenses/by/4.0/
 
 from __future__ import print_function, division
 
-from Card import Hand, Deck
+from poker import Hand, Deck
 
 import matplotlib.pyplot as plt
 
@@ -246,6 +246,7 @@ def main():
     print(probFix_list)
     for label, prob in zip(label4plot_list, probs4plot_list):
         plt.bar(label, prob)
+    plt.xticks(rotation=45)
     plt.show()
         
 if __name__ == '__main__':
