@@ -18,6 +18,7 @@ class Hist(dict):
         if self[x] == 0:
             del self[x]
 
+
 class PokerHand(Hand):
     """Represents a poker hand."""
 

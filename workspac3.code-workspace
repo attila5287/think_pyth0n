@@ -6,9 +6,13 @@
 	],
 	"settings": {
 		"editor.quickSuggestionsDelay": 1000,
-		"editor.fontFamily": "'PT mono' , 'Hermit',  'Fantasque Sans Mono'  ",
+		"editor.fontFamily": "'PT mono', 'Hermit', 'Drucifer', 'Fantasque Sans Mono' ",
 		"markdown.preview.fontFamily": "-Anonymous Prom, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif",
-		"editor.fontWeight": "300",
-		"editor.fontSize": 16
+		"editor.fontSize": 16,
+		"editor.lineHeight": 30,
+		"terminal.integrated.fontFamily": "'Fantasque Sans Mono'",
+		"terminal.integrated.fontWeightBold": "normal",
+		"editor.suggestFontSize": 12,
+		"editor.fontWeight": "300"
 	}
 }

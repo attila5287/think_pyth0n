@@ -31,11 +31,12 @@ if __name__ == '__main__':
     deck.shuffle()
 
     # deal the cards and classify the hands
-    for i in range(7):
-        hand = PokerHand()
-        deck.move_cards(hand, 7)
-        hand.sort()
-        print(hand)
-        print(hand.has_flush())
-        print('')
+    hand = PokerHand()
+    print(hand)
+    deck.move_cards(hand, 7)
+    hand.sort()
+    print(hand)
+    print('---')
+    print(hand.has_flush())
+    print('')
 
