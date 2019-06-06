@@ -22,7 +22,7 @@ class Hist(dict):
 class PokerHand(Hand):
     """Represents a poker hand."""
 
-    all_labels = ['straightflush', 'fourkind', 'fullhouse', 'flush',
+        `   ll_labels = ['straightflush', 'fourkind', 'fullhouse', 'flush',
                   'straight', 'threekind', 'twopair', 'pair', 'highcard']
 
     def make_histograms(self):
