@@ -115,7 +115,7 @@ if __name__ == '__main__':
     deck.shuffle()
 
     hand = Hand()
-    print(find_defining_class(hand, 'shuffle'))
+    # print(find_defining_class(hand, 'shuffle'))
 
     deck.move_cards(hand, 3)
     hand.sort()

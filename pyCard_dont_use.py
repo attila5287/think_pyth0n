@@ -121,8 +121,7 @@ def cardTester():
 
 
 class Deck():
-    """ GENERATES FIFTY-TW0 CARDS RANDOM-UNIQUE """
-
+    """ GENERATES FIFTY-TW0 CARDS """
     def __init__(self):
         self.cards = [
             Card(suit, rank) for suit in range(len(Card.suit_l1st)) for rank in range(1, len(Card.rank_l1st))
@@ -148,14 +147,8 @@ class Deck():
         """
         random.shuffle(self.cards)
 
-    play3r_names = [
-        'Attila',
-        'Bob',
-        'Codie',
-        'Daniel',
-        'Erce',
-        'Funk'
-    ]
+    def cut(self, parameter_list):
+        pass
 
     def test_0utput(self):
         """
@@ -172,19 +165,21 @@ class Deck():
             for n in range(len(sample_card.__split2rows__())):
                 for kart in s3lf[start:br3ak]:
                     out += kart.__split2rows__()[n]
-                # out += '\n'
+                out += '\n'
             start = br3ak
             br3ak += 5
         print(out)
         return out
 
+    # -------------------HAND-----------------------
     def add_card(self, card):
         """
+        ADD A CARD OBJECT
         """
         pass
         self.cards.append(card)
 
-    def pop_card(self, i=0):
+    def pop_card(self, i=-1):
         """Removes and returns a card from the deck.
         i: index of the card to pop; by default, pops the last card.
         """
@@ -199,17 +194,18 @@ class Deck():
         for i in range(num):
             hand.add_card(self.pop_card())
     # -------------------------
-    
+
+
 class Hand(Deck):
     """
     INHERIT FROM DECK SO  ALL METHODS AVLBLE
     """
 
-    def __init__(self, label='', play3r_name='player'+str(random.randint(0, 99))
-                 ):
-        self.cards = []
+    def __init__(self, label='', cards = []):
         self.label = label
-        self.play3r_name = play3r_name
+        self.cards = cards
+        # self.play3r_name = play3r_name
+        # , play3r_name='playerstr'+str(random.randint(0, 99))
 
     def __str__(self):
         """
@@ -226,79 +222,69 @@ class Hand(Deck):
             out += '\n'
         # print(out)
         return(out)
-# -----------------------
-play3r_names=[
-            'Attila',
-            'Bob',
-            'Codie',
-            'Daniel',
-            'Erce',
-            'Funky'
-            ]
 
-def dealFor6Players(
-                        play3r_names=[
-            'Attila',
-            'Bob',
-            'Codie',
-            'Daniel',
-            'Erce',
-            'Funky'
-            ],
-            play3r_hands=[
-                Hand(play3r_name = name) for name in play3r_names
-                ]
-                ):
-        """
-        POKER TABLE FOR SIX PLAYERS
-        """
-        pass
-        table_deck = Deck()
-        table_deck.shuffle()
+
+# -----------------------
+play3r_names = [
+    'Attila',
+    'Bob',
+    'Codie',
+    'Daniel',
+    'Erce',
+    'Funky'
+]
+
+
+class PlayPoker(Deck):
+    """
+    POKER TABLE FOR SIX PLAYERS
+    """
+    pass
+    def _dealforSix(self, play3r_names=['Attila', 'Bob', 'Codie', 'Daniel', 'Erce', 'Funky'],
+                 play3r_hands=[Hand(label = name) for name in play3r_names]):
+
+        self.shuffle()
+        print(play3r_hands)
         x = range(5)
         for n in x:
             for hand in play3r_hands:
-                table_deck.move_cards(hand, 1)
+                self.move_cards(hand, 1)
+                break
                 # print(hand)
 
         for hand in play3r_hands:
-            print('--------- ' + str(hand.play3r_name) + ' ---------')
-            # print(str(hand.label))
-            
             print(hand)
-# ----------------------
-class PokerTable(Deck):
-    def __init__(self, play3r_names=['Attila', 'Bob', 'Codie', 'Daniel', 'Erce', 'Funky'], cards = []):
-        self.play3r_names = play3r_names
-        self.cards = [ Card(suit, rank) for suit in range(len(Card.suit_l1st)) for rank in range(1, len(Card.rank_l1st))]
-        players_message = ': ' 
-        for name in play3r_names:
-            name += ', '
-            players_message+= name
-        print('welcome to poker table ' + str(players_message))
-        pass
-    def deal(self, play3r_hands = []):
-        pass
-        self.shuffle()
-        # print(str(self)[:90]) #shows the first three cards so lets make sure cards go one by one
-        play3r_hands = [ Hand(play3r_name = name) for name in play3r_names]
-        for number_of_cards in range(5):
-            for hand in play3r_hands:
-                self.move_cards(hand,1)
-        for hand in play3r_hands:
-            print('--------- ' + str(hand.play3r_name) + ' ---------')
-            print(hand)
-        pass
+
+# class Player()
 
 
 # ----------------------
 if __name__ == "__main__":
-    print()
-    # d3ste = Deck()
-    # d3ste.shuffle()
+    d3ste = Deck()
+    d3ste.shuffle()
     # d3ste.show_ten_hands()
-    # h4nd = Hand()
+    h1nd = Hand()
+    h2nd = Hand()
+    h3nd = Hand()
+    h4nd = Hand()
+    hands_list = [
+        h1nd,
+        h2nd,
+        h3nd,
+        h4nd
+    ]
+    for hand in hands_list:
+        d3ste.move_cards(hand,1)
+    # for hand in hands_list:
+    #     print(hand)
+    # print(h1nd)
+    # print(h2nd)
+    # print(h3nd)
     # print(h4nd)
-    # dealFor6Players()
-    test_table = PokerTable()
-    test_table.deal()
+    # h4nd.add_card(d3ste.pop_card())
+    # h4nd.add_card(Card(2,9))
+    # h4nd.add_card(Card(3,1))
+    # h4nd.add_card(Card(1,9))c
+    # h4nd.add_card(Card(3,7))
+    # print(h4nd)
+    PlayPoker()._dealforSix()

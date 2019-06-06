@@ -156,6 +156,14 @@ class Deck():
         'Erce',
         'Funk'
     ]
+    play3r_hands = [
+
+    ]
+
+    # def table4SixPlz(self):
+    #     """
+    #     SIMULATES A SIX PLAYER TABLE BRIEFLY FOR SIMULATION POPULATION
+    #     """
 
     def test_0utput(self):
         """
@@ -178,6 +186,7 @@ class Deck():
         print(out)
         return out
 
+    # -------------------HAND-----------------------
     def add_card(self, card):
         """
         """
@@ -255,6 +264,11 @@ def dealFor6Players(
         pass
         table_deck = Deck()
         table_deck.shuffle()
+        play3r_index = [
+            str(integer) for integer in np.arange(len(play3r_names))
+        ]
+        print(play3r_index)
+        print(play3r_hands)
         x = range(5)
         for n in x:
             for hand in play3r_hands:
@@ -266,39 +280,15 @@ def dealFor6Players(
             # print(str(hand.label))
             
             print(hand)
-# ----------------------
-class PokerTable(Deck):
-    def __init__(self, play3r_names=['Attila', 'Bob', 'Codie', 'Daniel', 'Erce', 'Funky'], cards = []):
-        self.play3r_names = play3r_names
-        self.cards = [ Card(suit, rank) for suit in range(len(Card.suit_l1st)) for rank in range(1, len(Card.rank_l1st))]
-        players_message = ': ' 
-        for name in play3r_names:
-            name += ', '
-            players_message+= name
-        print('welcome to poker table ' + str(players_message))
-        pass
-    def deal(self, play3r_hands = []):
-        pass
-        self.shuffle()
-        # print(str(self)[:90]) #shows the first three cards so lets make sure cards go one by one
-        play3r_hands = [ Hand(play3r_name = name) for name in play3r_names]
-        for number_of_cards in range(5):
-            for hand in play3r_hands:
-                self.move_cards(hand,1)
-        for hand in play3r_hands:
-            print('--------- ' + str(hand.play3r_name) + ' ---------')
-            print(hand)
-        pass
-
+        
 
 # ----------------------
 if __name__ == "__main__":
-    print()
     # d3ste = Deck()
     # d3ste.shuffle()
+    dealFor6Players()
     # d3ste.show_ten_hands()
     # h4nd = Hand()
     # print(h4nd)
-    # dealFor6Players()
-    test_table = PokerTable()
-    test_table.deal()
+# ==========================================
+# ==========================================
